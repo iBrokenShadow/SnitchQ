@@ -85,116 +85,83 @@ cp .env.example .env
 
 ---
 
-⚙️ Configuration
+## ⚙️ Configuration
 
-Edit your .env:
+Edit your `.env`:
 
+```env
 BOT_TOKEN=YOUR_TELEGRAM_BOT_TOKEN
 OLLAMA_URL=http://localhost:11434/api/generate
-MODEL_NAME=mistral   # or phi, tinyllama, etc.
+MODEL_NAME=mistral # or phi, tinyllama, etc.
 PORT=3000
-
+```
 
 ---
 
-📦 Usage
+## 📦 Usage
 
-# Start your bot
+Start your bot:
+
+```bash
 npm start
+```
 
-1. Open Telegram and chat with @YourBotUsername.
-
-
-2. Send /start to wake it up.
-
-
-3. Forward any message you want SnitchQ to scan.
-
-
+1. Open Telegram and chat with [@YourBotUsername](https://t.me/YourBotUsername).
+2. Send `/start` to wake it up.
+3. Forward any message you want **SnitchQ** to scan.
 4. Receive your scam verdict in seconds.
 
-
-
-
 ---
 
-📝 Prompt Design
+## 📝 Prompt Design
 
 We use a concise template to stay within tight model contexts:
 
+```text
 Classify the following Telegram message as Legit, Scam, or Suspicious:
-
-Message:
-"{forwarded_text}"
-
+Message: "{forwarded_text}"
 Answer with the label and a one-sentence reasoning.
-
-
----
-
-🚧 Error Handling
-No forward detected? → “Please forward a message for scam analysis.”
-
-Empty text? → “Forwarded message contains no text to analyze.”
-
-LLM timeout/fail? → “Failed to get a response from the scam detection model.”
-
-All wrapped in try/catch for graceful user feedback.
-
-
+```
 
 ---
 
-📈 Roadmap
+## 🚧 Error Handling
 
-[ ] Verdict logging (SQLite / JSON)
+- **No forward detected?** → “Please forward a message for scam analysis.”
+- **Empty text?** → “Forwarded message contains no text to analyze.”
+- **LLM timeout/fail?** → “Failed to get a response from the scam detection model.”
 
-[ ] “Trusted Users” whitelist
-
-[ ] User feedback & report command
-
-[ ] Express.js / Next.js Dashboard
-
-[ ] Voice message support (Whisper)
-
-[ ] Rate-limiting & abuse protection
-
-
+All wrapped in `try/catch` for graceful user feedback.
 
 ---
 
-🤝 Contributing
+## 📈 Roadmap
 
-Fork it → git@github.com:ibrokenshadow/SnitchQ.git
-
-
----
-
-📜 License
-
-This project is licensed under the MIT License. See LICENSE for details.
-
+- [ ] Verdict logging (SQLite / JSON)
+- [ ] “Trusted Users” whitelist
+- [ ] User feedback & `/report` command
+- [ ] Express.js / Next.js Dashboard
+- [ ] Voice message support (Whisper)
+- [ ] Rate-limiting & abuse protection
 
 ---
 
-🦸 Author
+## 🤝 Contributing
 
-Broken Shadow (@iBrokenShadow)
-
-Business-P & Investor
-
-Freelance Web Dev ❤️‍
-
-Ethical Hacker & Programmer
-
-🌐 https://ibrokenshadow.com
-
-✉️ Reach me on Telegram: @iBrokenShadow
-
-
+Fork it → [`git@github.com:ibrokenshadow/SnitchQ.git`](https://github.com/ibrokenshadow/SnitchQ)
 
 ---
 
-<p align="center">
-  <em>SnitchQ — Because scammers don’t rest, and neither should your security.</em>
-</p>
+## 📜 License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+
+---
+
+## 🦸 Author
+
+**Broken Shadow** ([@iBrokenShadow](https://t.me/iBrokenShadow))  
+Business-P & Investor  
+Freelance Web Dev ❤️‍  
+Ethical Hacker & Programmer  
+🌐 [https://ibrokenshadow.com](https://ibrokenshadow.com)
